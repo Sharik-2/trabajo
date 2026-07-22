@@ -20,7 +20,7 @@ class HomePage extends StatelessWidget {
               backgroundColor: Colors.blue,
               child: CircleAvatar(
                 radius: 55,
-                backgroundImage: AssetImage("assets/perfil.png"),
+                backgroundImage: AssetImage("assets/se.png"),
               ),
             ),
 
