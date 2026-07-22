@@ -17,17 +17,22 @@ class HomePage extends StatelessWidget {
           children: [
             const CircleAvatar(
               radius: 60,
-              backgroundImage: NetworkImage(
-                "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
+              backgroundColor: Colors.blue,
+              child: CircleAvatar(
+                radius: 55,
+                backgroundImage: AssetImage("assets/perfil.png"),
               ),
             ),
+
             const SizedBox(height: 20),
 
             TextField(
               decoration: InputDecoration(
-                labelText: "Nombres",
-                border: OutlineInputBorder(),
-                prefixIcon: Icon(Icons.person),
+                prefixIcon: const Icon(Icons.badge),
+                labelText: "Nombre",
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(8),
+                ),
               ),
             ),
 
@@ -35,9 +40,11 @@ class HomePage extends StatelessWidget {
 
             TextField(
               decoration: InputDecoration(
-                labelText: "Apellidos",
-                border: OutlineInputBorder(),
-                prefixIcon: Icon(Icons.person_outline),
+                prefixIcon: const Icon(Icons.work),
+                labelText: "Profesión",
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(8),
+                ),
               ),
             ),
 
@@ -45,67 +52,27 @@ class HomePage extends StatelessWidget {
 
             TextField(
               decoration: InputDecoration(
-                labelText: "Documento",
-                border: OutlineInputBorder(),
-                prefixIcon: Icon(Icons.badge),
+                prefixIcon: const Icon(Icons.email),
+                labelText: "Email",
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(8),
+                ),
               ),
             ),
 
-            const SizedBox(height: 15),
-
-            TextField(
-              decoration: InputDecoration(
-                labelText: "Correo Electrónico",
-                border: OutlineInputBorder(),
-                prefixIcon: Icon(Icons.email),
-              ),
-            ),
-
-            const SizedBox(height: 15),
-
-            TextField(
-              decoration: InputDecoration(
-                labelText: "Teléfono",
-                border: OutlineInputBorder(),
-                prefixIcon: Icon(Icons.phone),
-              ),
-            ),
-
-            const SizedBox(height: 15),
-
-            TextField(
-              maxLines: 3,
-              decoration: InputDecoration(
-                labelText: "Perfil Profesional",
-                border: OutlineInputBorder(),
-                prefixIcon: Icon(Icons.description),
-              ),
-            ),
-
-            const SizedBox(height: 30),
+            const SizedBox(height: 20),
 
             SizedBox(
               width: double.infinity,
-              height: 50,
               child: ElevatedButton(
                 onPressed: () {
                   ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      content: const Text("Datos grabados correctamente"),
-                      backgroundColor: Colors.green,
-                      duration: const Duration(seconds: 3),
-                      action: SnackBarAction(
-                        label: "Cerrar",
-                        textColor: Colors.white,
-                        onPressed: () {},
-                      ),
+                    const SnackBar(
+                      content: Text("Datos grabados correctamente"),
                     ),
                   );
                 },
-                child: const Text(
-                  "Grabar datos",
-                  style: TextStyle(fontSize: 18),
-                ),
+                child: const Text("Grabar datos"),
               ),
             ),
           ],
